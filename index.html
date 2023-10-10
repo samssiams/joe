@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listen</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #FFC0CB, #87CEFA);
+      text-align: center;
+    }
+    #love-message {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    #cute-image {
+      max-width: 300px; /* Adjust the size according to your image */
+      height: auto;
+      margin-bottom: 30px; /* Add margin below the image */
+      border: 5px solid #111111; /* Pink border for the frame */
+    }
+    #lyrics {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+      margin-bottom: 20px; /* Add margin below the lyrics */
+    }
+    #audio {
+      width: 100%;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div id="love-message">-Joe.</div>
+  <img id="cute-image" src="joe.png" alt="Cute Image"> <!-- Add your cute image here -->
+  <div id="lyrics">Tatlong bilyon, ikaw lamang ang aking gusto<br>Pasensya na kung ngayon ako'y 'di para sa'yo<br>Tayo ay papunta na sa'ting bagong yugto<br>'Yokong mabuhay sa isang mundong walang tayo</div>
+  
+  <audio id="audio" controls>
+    <source src="Ere.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const lyrics = document.getElementById('lyrics');
+    
+    // Play audio when page loads
+    audio.play();
+
+    // Display lyrics when audio is playing
+    audio.addEventListener('play', () => {
+      lyrics.style.display = 'block';
+    });
+    // jajajaj
+    // Hide lyrics when audio is paused
+    audio.addEventListener('pause', () => {
+      lyrics.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
